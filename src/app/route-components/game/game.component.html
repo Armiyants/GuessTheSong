@@ -1,0 +1,24 @@
+<div class="full-page">
+  <button *ngIf="currentRound !== 'finalRound'"  class="btn btn-success new-game" (click)="newGame()">Next Round</button>
+  <div class="category-container d-flex" *ngFor="let category of categories">
+    <div [ngClass]="{'selected-category-name': category.isPlaying}" class="category-name h-100 d-flex justify-content-center align-items-center">
+      <h1>{{category.name}}</h1>
+    </div>
+    <div class="w-100 h-100 pb-3 position-relative">
+      <div class="position-absolute h-100 w-100 d-flex justify-content-around">
+        <div
+        *ngFor="let song of category.songs"
+        class="song"
+        [ngClass]="{'animate__shakeY animate__animated animate__infinite': song.isPlaying, 'activeSong': song.isPlayed}"
+        (click)="handleSinging(category.id, song.id)">
+          <img src="assets/note.png" height="100%" width="auto" alt="">
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+$base-color: #4A2F78;
+
+.full-page {
+  height: 100vh;
+  background-color: $base-color;
+  padding-top: 2%;
+  .new-game {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .category-container {
+    height: 20%;
+    margin-bottom: 2%;
+    .category-name {
+      width: 400px;
+      background-color: #EAEF59;
+      h1 {
+        color: $base-color;
+      }
+    }
+
+    .selected-category-name {
+      background-color: white !important;
+    }
+
+    .song {
+      position: relative;
+      width: 150px;
+      cursor: pointer;
+    }
+
+    .line {
+      border-bottom: 2px solid #E8B8FF;
+      height: 20%;
+    }
+  }
+  .activeSong {
+    filter: invert(1);
+  }
+}
+
